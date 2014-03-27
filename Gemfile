@@ -9,10 +9,24 @@ gem 'slim'
 gem 'bson_ext'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bcrypt'
+gem 'i18n', github: 'svenfuchs/i18n'
 
 group :development, :test do
   # gem "better_errors"
   gem 'pry'
+  gem 'rspec-rails'
   gem "binding_of_caller"
   gem 'letter_opener'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+  gem 'factory_girl'
+end
+
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
 end
